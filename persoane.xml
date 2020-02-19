@@ -4,5 +4,12 @@
         <nume>Popescu</nume>
         <prenume>Ion</prenume>
         <varsta>23</varsta>
+        <adresa>
+            <strada>Alexandru Marinescu</strada>
+            <numar>18 B</numar>
+            <localitate>Ungheni</localitate>
+            <judet>Ungheni</judet>
+            <tara>Republica Moldova</tara>
+        </adresa>
     </persoana>
 </persoane>
