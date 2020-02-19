@@ -1,5 +1,5 @@
 <!ELEMENT persoane (persoana+)>
-<!ELEMENT persoana (nume, prenume, varsta, adresa, limba_materna, limbi_straine+, competente_organizationale)>
+<!ELEMENT persoana (nume, prenume, varsta, adresa, limba_materna, limbi_straine, competente_organizationale)>
 <!ELEMENT adresa (strada, numar, localitate, judet, tara)>
 <!ELEMENT limbi_straine (limba*)>
 
