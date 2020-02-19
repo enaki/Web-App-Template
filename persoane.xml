@@ -12,4 +12,29 @@
             <tara>Republica Moldova</tara>
         </adresa>
     </persoana>
+    <persoana id="2">
+        <nume>Ilioi</nume>
+        <prenume>Alex</prenume>
+        <varsta>21</varsta>
+        <adresa>
+            <strada>Mihail Kogalniceanu</strada>
+            <numar>23</numar>
+            <localitate>Targu Neamt</localitate>
+            <judet>Targu Neamt</judet>
+            <tara>Romania</tara>
+            
+        </adresa>
+    </persoana>
+    <persoana id="3">
+        <nume>Moisii</nume>
+        <prenume>Marin</prenume>
+        <varsta>21</varsta>
+        <adresa>
+            <strada>Mihai Eminescu</strada>
+            <numar>38</numar>
+            <localitate>Iasi</localitate>
+            <judet>Iasi</judet>
+            <tara>Romania</tara>
+        </adresa>
+    </persoana>
 </persoane>
