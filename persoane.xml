@@ -11,7 +11,11 @@
             <judet>Ungheni</judet>
             <tara>Republica Moldova</tara>
         </adresa>
+        <limba_materna>romana</limba_materna>
+        <limbi_straine>  </limbi_straine>
+        <competente_organizationale>NU</competente_organizationale>
     </persoana>
+
     <persoana id="2">
         <nume>Ilioi</nume>
         <prenume>Alex</prenume>
@@ -22,9 +26,15 @@
             <localitate>Targu Neamt</localitate>
             <judet>Targu Neamt</judet>
             <tara>Romania</tara>
-            
         </adresa>
+        <limba_materna>romana</limba_materna>
+        <limbi_straine> 
+            <limba>engleza</limba>
+            <limba>rusa</limba>
+        </limbi_straine>
+        <competente_organizationale>NU</competente_organizationale>
     </persoana>
+
     <persoana id="3">
         <nume>Moisii</nume>
         <prenume>Marin</prenume>
@@ -36,5 +46,11 @@
             <judet>Iasi</judet>
             <tara>Romania</tara>
         </adresa>
+        <limba_materna>romana</limba_materna>
+        <limbi_straine> 
+            <limba>engleza</limba>
+            <limba>franceza</limba>
+        </limbi_straine>
+        <competente_organizationale>DA</competente_organizationale>
     </persoana>
 </persoane>
