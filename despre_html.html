@@ -38,6 +38,40 @@
     <code>border</code>="1".
     <br />
     La validare va da eroarea: <i>The border attribute on the table element is obsolete</i>.
+    <br /> <br />
+    Formularele se pot crea cu ajutorul tag-ului <code>form</code> care poate contine tag-urle: <code>input</code>,
+    <code>textarea</code>, <code>label</code>, <code>select</code>, <code>option</code>, <code>button</code>.
+    <br />
+    Pentru mai multe detalii consultati cursul sau tutorialul <a
+        href="https://www.w3schools.com/html/html_forms.asp">HTML Forms and Inputs</a> de la adresa <a
+        href="http://www.w3schools.com/html/html_forms.asp">http://www.w3schools.com/html/html_forms.asp</a>
+    .
+    <br /><br />
+    Un exemplu de formular este urmatorul:
+    <br />
+    <form>
+        <label for="lname">Nume:</label>
+        <input type="text" id="lname" name="lname"><br />
+        <label for="fname">Prenume:</label>
+        <input type="text" id="fname" name="fname"><br />
+        <label for="password">Parola:</label>
+        <input type="password" id="password" name="password"><br />
+        <label for="colors">Culoarea preferata:</label>
+        <input list="colors">
+        <datalist id="colors" cols="5">
+            <option value="rosu">
+            <option value="verde">
+            <option value="galben">
+            <option value="violet">
+            <option value="albastru">
+        </datalist><br />
+        <label for="description">Descriere:</label>
+        <textarea name="message" rows="2" cols="15"></textarea><br />
+        <label for="agree"> Sunt de acord cu conditiile</label>
+        <input type="checkbox" name="agree" value="agree"><br /><br />
+        <button type="submit" value="Submit">Inregistreaza</button>
+    </form>
+
 
 </body>
 
