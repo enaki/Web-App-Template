@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ro-RO">
+
+<head>
+    <title>HTML</title>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <!--Partea a 1-a-->
+    <header>
+        <h1>
+            <img src="imagini/logo.jpeg" alt="Logo Page" width="30" height="30">
+            Programare Web</h1>
+
+    </header>
+    <hr />
+    <nav><a href="index.html">
+            Acasă
+        </a>
+        &nbsp; &nbsp; &nbsp;
+        <a href="inregistreaza.html">
+            Înregistrează
+        </a>
+        &nbsp; &nbsp; &nbsp;
+        <a href="video.html">
+            Video
+        </a>
+        &nbsp; &nbsp; &nbsp;
+        <a href="desen.html">
+            Desen
+        </a>
+        &nbsp; &nbsp; &nbsp;
+        <a href="despre_html.html">
+            Despre
+        </a>
+
+    </nav>
+    <hr />
+    <main>
+        <form>
+            <fieldset>
+                <legend>Informații generale:</legend>
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username"><br />
+
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password"><br />
+
+                <label for="nume">Nume:</label>
+                <input type="text" name="nume" id="nume"><br />
+
+                <label for="prenume">Prenume:</label>
+                <input type="text" name="prenume" id="prenume"><br />
+
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email"><br />
+
+                <label for="phone">Telefon:</label>
+                <input type="tel" name="phone" id="phone"><br />
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Informații personale:</legend>
+                <label for="sex">Sex:</label>
+                <select id="sex">
+                    <option value="m">Male</option>
+                    <option value="f">Female</option>
+                </select><br />
+
+                <label>Mancarea preferată:</label>
+                <input list="food">
+                <datalist id="food">
+                    <option value="salată">
+                    <option value="sarmale">
+                    <option value="mămăligă">
+                    <option value="ceapă">
+                </datalist><br />
+
+                <label for="color">Culoarea preferată:</label>
+                <input type="color" name="color" id="color"><br />
+
+                <label for="data_nastere">Data nașterii:</label>
+                <input type="date" name="data_nastere" id="data_nastere"><br />
+
+                <label for="ora_nastere">Ora naștere:</label>
+                <input type="time" name="ora_nastere" id="ora_nastere"><br />
+
+                <label for="varsta">Vârsta:</label>
+                <input type="range" name="varsta" id="varsta" min="0" max="120"><br />
+
+                <label for="url">Pagină personală:</label>
+                <input type="url" name="url" id="url"><br />
+
+                <label>Descriere:</label>
+                <textarea name="message" rows="2" cols="15"></textarea><br />
+            </fieldset>
+            <button type="button" disabled id="submit">Înregistrează</button>
+
+        </form>
+
+    </main>
+    <hr />
+    <footer>
+        &copy;. 2020. Programare web
+    </footer>
+
+</body>
+
+</html>
