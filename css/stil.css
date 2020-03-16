@@ -1,0 +1,115 @@
+#inceput {
+    position:absolute; 
+    top:0px; 
+    left:0px; 
+    height:125px; 
+    right:0px;
+    overflow:visible;
+}
+
+#cuprins {
+    position:absolute; 
+    top:150px; 
+    bottom:3%; 
+    left:0px; 
+    right:0px; 
+    overflow:auto;
+}
+
+#incheiere {
+    position:absolute; 
+    bottom:0px; 
+    height:3%; 
+    left:0px; 
+    right:0px; 
+    overflow:hidden;
+}
+
+header {
+    text-align: center;
+    font-family: Tahoma, Verdana, Geneva, sans-serif;
+}
+
+body {
+    background-image: url("../imagini/bricks_bg.jpg");
+    font-family: "Times New Roman", Times, serif;
+    color: white;
+    
+}
+    body main {
+        margin-top: 20px;
+        background: rgb(152,16,17);
+        background: radial-gradient(circle, rgba(152,16,17,1) 24%, rgba(34,1,50,1) 73%);
+    }
+
+    body nav {
+        background: rgb(0,0,0);
+        background: linear-gradient(0deg, rgba(0,0,0,1) 25%, rgba(255,0,0,1) 50%, rgba(0,0,0,1) 75%);
+        text-align: center;
+    }
+
+        body nav a:hover {
+            background: orange;
+            background: radial-gradient(circle,  orange 0%, rgb(17, 22, 29) 100%);
+        }
+
+nav{
+    padding: 20px;
+    background-color: honeydew;
+}
+    nav a {
+        display: inline;
+        color: white;
+        text-decoration: none;
+        background: rgb(249,68,94);
+        background: radial-gradient(circle, rgba(249,68,94,1) 0%, rgba(45,56,70,1) 100%);
+        padding: 10px 10px;
+        margin: 0px 75px;
+        border-radius: 5px;
+        font-size: 20px;
+        text-align: center;
+    }
+
+
+hr {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+
+
+fieldset
+{
+    border: 2px solid red;
+    border-radius: 4px;
+    background-color:#CCC;
+    max-width:500px;
+    padding:16px;	
+}
+
+    fieldset legend
+    {
+        color : purple;
+        font: "Comic Sans MS", cursive, sans-serif;
+    }
+
+    fieldset label{
+        display: inline-block;
+        width: 140px;
+        text-align: center;
+    }​
+
+#sex #food #color{
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+}​
+
+input {
+    width:300px;
+    
+}
+
+textarea {
+    width:300px;
+    
+}
