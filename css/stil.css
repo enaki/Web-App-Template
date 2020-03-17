@@ -40,6 +40,8 @@ input[type="date"], input[type="time"], input[type="range"], input#colors_list, 
     background-color: rgba(0,0,0,0.7);
 }
 
+
+
 #inceput {
     position:absolute; 
     top:0px; 
@@ -54,6 +56,8 @@ input[type="date"], input[type="time"], input[type="range"], input#colors_list, 
         text-align: center;
     }
     header {
+        background: rgb(18,3,28);
+        background: linear-gradient(0deg, rgba(18,3,28,0.1) 0%, rgba(0,0,0, 0.8) 50%, rgba(54,35,10,0.1) 100%);
         text-align: center;
         font-family: Tahoma, Verdana, Geneva, sans-serif;
     }
@@ -85,10 +89,8 @@ input[type="date"], input[type="time"], input[type="range"], input#colors_list, 
         position:absolute; 
         top:150px; 
         bottom:3%; 
-        width: 99%;
-        align-self: center;
-        align-items: center;
-        padding: 0, 0;
+        width: 100%;
+        left: 0px;
         overflow:auto;
         background: rgb(152,16,17);
         background: radial-gradient(circle, rgba(65, 7, 7, 0.7) 24%, rgba(34,1,50,0.95) 73%);
@@ -114,8 +116,6 @@ input[type="date"], input[type="time"], input[type="range"], input#colors_list, 
             width: 100%;
         }
 
-        
-
         #cuprins main svg {
             align-content: center;
             text-align: center;
@@ -123,6 +123,9 @@ input[type="date"], input[type="time"], input[type="range"], input#colors_list, 
             margin: auto;
             background-color: #7ee8fa;
             background-image: linear-gradient(315deg, #7ee8fa 0%, #80ff72 74%);
+            border-style: solid;
+            border-color: rgb(255, 63, 89);
+            border-radius: 10px;
         }
 
         #cuprins main svg:hover {
@@ -172,6 +175,12 @@ input[type="date"], input[type="time"], input[type="range"], input#colors_list, 
         img.center_img {
             display: block;
             margin: auto;
+        }
+
+        #img_2{
+            border-style: groove;
+            border-radius: 5px;
+            border-color: rgb(152, 16, 141);
         }
 
         table.center_img {
@@ -250,5 +259,4 @@ input[type="date"], input[type="time"], input[type="range"], input#colors_list, 
         display: inline-block;
         width: 150px;
         text-align: center;
-    }​
-   
+    }​ 
