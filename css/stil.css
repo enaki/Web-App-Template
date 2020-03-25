@@ -1,11 +1,9 @@
-
-
 hr {
     margin-block-start: 0em;
     margin-block-end: 0em;
 }
 
-p::first-letter, .text::first-letter {
+p::first-letter, .text::first-letter, h2::first-letter {
     font-size: 150%;
     color: rgb(236, 57, 168);
 }
@@ -19,6 +17,25 @@ body {
     background-image: url("../imagini/bricks_bg.jpg");
     font-family: "Times New Roman", Times, serif;
     color: white;
+}
+
+aside {
+    overflow: hidden;
+    background-color: #333;
+}
+
+aside a{
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+aside a:hover {
+    background-color: #ddd;
+    color: black;
 }
 
 input[type="text"], input[type="password"], input[type="email"], input[type="tel"], input[type="select"], textarea, select, datalist,
@@ -260,3 +277,37 @@ input[type="date"], input[type="time"], input[type="range"], input#colors_list, 
         width: 150px;
         text-align: center;
     }​ 
+
+    #section_1 {
+        width: 50%;
+        left: 25%;
+        text-align: center;
+    }
+
+    #info {
+        font-size: 20px;
+    }
+
+    #data_curenta, #timp_curent, #locatie, #browser_utilizat, #sistem_operare, #url_curent {
+        color: cyan;
+        font-size: 20px;
+    }
+
+    #loto_in_1, #loto_in_2, #loto_in_3, #loto_in_4,
+    #loto_in_5, #loto_in_6, #loto_in_7, #loto_in_8 {
+        width: 40px;
+        height: 40px;
+        font-size: 30px;
+        color:red;
+        background-color: black;
+        
+
+    }
+
+    #form_loto_input {
+        text-align: center;
+    }
+
+    
+
+    

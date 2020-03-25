@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ro-RO">
+
+<head>
+    <title>HTML</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/stil.css">
+    <script src="js/script.js"></script>
+</head>
+
+<body onload="section1Function()">
+    <!--Partea a 1-a-->
+    <div id="inceput">
+        <header>
+            <h1>
+                <img src="imagini/logo.svg" alt="Logo Page" width="30" height="30">
+                Programare Web</h1>
+        </header>
+        <hr />
+        <nav><a href="index.html">
+                Acasă
+            </a>
+            &nbsp; &nbsp; &nbsp;
+            <a href="inregistreaza.html">
+                Înregistrează
+            </a>
+            &nbsp; &nbsp; &nbsp;
+            <a href="video.html">
+                Video
+            </a>
+            &nbsp; &nbsp; &nbsp;
+            <a href="desen.html">
+                Desen
+            </a>
+            &nbsp; &nbsp; &nbsp;
+            <a href="invat_js.html">
+                Învăț JavaScript
+            </a>
+            &nbsp; &nbsp; &nbsp;
+            <a href="despre_html.html">
+                Despre
+            </a>
+            
+        </nav>
+        <hr />
+    </div>
+    <div id="cuprins">
+        <main>
+            <aside>
+                <a href="#section_1"> Sectiunea 1</a>
+                <a href="#section_2"> Sectiunea 2</a>
+                <a href="#section_3"> Sectiunea 3</a>
+                <a href="#section_4"> Sectiunea 4</a>
+            </aside>
+            <div class="text">
+                
+                <section id="section_1">
+                    <h2>Secțiunea 1: Informații despre utilizator</h2>
+                    <span id="info">Data curentă: </span><span id="data_curenta"></span></br>
+                    <span id="info">Ora curentă: <span id="timp_curent"></span></br>
+                    <span id="info">URL curent: <span id="url_curent"></span></br>
+                    <span id="info">Locație: </span><span id="locatie"></span></br>
+                    <span id="info">Browser utilizat: </span><span id="browser_utilizat"></span></br>
+                    <span id="info">Sistem de operare: </span><span id="sistem_operare"></span></br>
+                </section>
+
+                <section id="section_2">
+                    <h2>Secțiunea 2: Internet Loto</h2>
+                    
+                        <form id="form_loto_input">
+                            <input id="loto_in_1" pattern="[A-Z0-9]{2}"></input>
+                            <input id="loto_in_2" pattern="[A-Z0-9]{2}"></input>
+                            <input id="loto_in_3" pattern="[A-Z0-9]{2}"></input>
+                            <input id="loto_in_4" pattern="[A-Z0-9]{2}"></input>
+                            <input id="loto_in_5" pattern="[A-Z0-9]{2}"></input>
+                            <input id="loto_in_6" pattern="[A-Z0-9]{2}"></input>
+                            <input id="loto_in_7" pattern="[A-Z0-9]{2}"></input>
+                            <input id="loto_in_8" pattern="[A-Z0-9]{2}"></input>
+                            <button class="button" onclick="section2Function_LOTO()">EXTRAGE</button>
+                        </form>
+
+                        <span id="loto_out">text</span>
+                </section>
+
+                <section id="section_3">
+                    
+                </section>
+
+                <section id="section_4">
+                    
+                </section>
+            </div>
+        </main>
+    </div>
+    <div id="incheiere">
+        <hr />
+        <footer>
+            &copy;. 2020. Programare web
+        </footer>
+        <hr />
+    </div>
+
+</body>
+
+</html>
