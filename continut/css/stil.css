@@ -1,3 +1,5 @@
+
+
 hr {
     margin-block-start: 0em;
     margin-block-end: 0em;
@@ -243,6 +245,8 @@ input[type="date"], input[type="time"], input[type="range"], input#colors_list, 
         padding:16px;
     }
 
+    
+
     #informatii_generale, #informatii_personale {
         margin: auto;
     }
@@ -253,17 +257,21 @@ input[type="date"], input[type="time"], input[type="range"], input#colors_list, 
 
     .button {
         color: yellow;   
-        width: 10%;
-        padding: 4px;
-        margin-top: 20px;
-        margin-left: 45%;
-        margin-right: 45%;
+        
         background-image: linear-gradient(to right, #870000 0%, #190A05 51%, #870000 100%);       
     }
 
     .button:hover { 
         background-image: linear-gradient(to right, #190A05 0%, #870000 51%, #190A05 100%);
         color: rgb(72, 255, 0);
+    }
+
+    .button_dimensions {
+        width: 100px;
+        padding: 4px;
+        margin-top: 20px;
+        margin-left: 45%;
+        margin-right: 45%;
     }
 
     fieldset legend
@@ -279,8 +287,6 @@ input[type="date"], input[type="time"], input[type="range"], input#colors_list, 
     }​ 
 
     #section_1 {
-        width: 50%;
-        left: 25%;
         text-align: center;
     }
 
@@ -293,21 +299,141 @@ input[type="date"], input[type="time"], input[type="range"], input#colors_list, 
         font-size: 20px;
     }
 
-    #loto_in_1, #loto_in_2, #loto_in_3, #loto_in_4,
-    #loto_in_5, #loto_in_6, #loto_in_7, #loto_in_8 {
-        width: 40px;
-        height: 40px;
+
+    /* Invatam Javascript*/
+    #loto_in_0, #loto_in_1, #loto_in_2, #loto_in_3, #loto_in_4,
+    #loto_in_5, #loto_in_6, #loto_in_7 {
+        width: 35px;
+        height: 35px;
         font-size: 30px;
         color:red;
         background-color: black;
-        
-
     }
 
     #form_loto_input {
         text-align: center;
     }
 
-    
+    #loto_out {
+        font-size: 20px;
+    }
 
+    .loto_out_response {
+        color: greenyellow;
+    }
+
+
+    #section3_canvas {
+        background: rgb(2,0,36);
+        background: linear-gradient(163deg, rgba(2,0,36,1) 32%, rgba(108,6,6,1) 70%);
+        border-style: double;
+        border-color: yellow;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    fieldset.canvas_menu{
+        width: 50%;
+        margin-left: 25%;
+        margin-bottom: 5px;
+    }
+
+    fieldset.table_menu{
+        width: 60%;
+        margin-left: 20%;
+        margin-bottom: 5px;
+    }
+
+    fieldset.table_menu input {
+        width: 50px;
+    }
+    fieldset.table_menu .button {
+        width: 50px;
+    }
+
+    button.button.button_dimensions_2 {
+        margin-top: 10px;
+        width: 40%;
+        margin-left: 5%;
+        color: white;
+    }
+
+    #javascript_table, #section3_canvas{
+        margin: auto;
+    }
+
+    #section3_canvas{
+        margin: auto;
+    }
+
+    #javascript_table th, #javascript_table td, #javascript_table tr{
+        width: 100px;
+        height: 20px;
+    }
+
+    /*
+    .section_column {
+        border-style: solid;
+        border-color: red;
+    }
+    */
+
+    /* 1x4 */
+    .text.section.d1x4 {
+        display: flex;
+        margin-left: 0%;
+        margin-right: 0%;
+        width: 100%;
+    }
+
+    .section_column {
+        flex: 25%;
+    }
+
+    /* 4x1 */
+    .text.section.d4x1 {
+        display: block;
+        margin-left: 25%;
+        width: 50%;
+    }
+
+    /* 2x2 */
+    .text.section.d2x2{
+        display: block;
+        margin-left: 0%;
+        margin-right: 0%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+@media (max-width: 1000px) {
+        #text_section {
+            display: block;
+            
+            width: 100%;
+        }
+}
+
+@media (max-width: 1750px) {
+        nav a {
+            color: white;
+            text-decoration: none;
+            background-image: radial-gradient( circle farthest-corner at 52.1% -29.6%,  rgba(144,17,105,1) 0%, rgba(51,0,131,1) 100.2% );
+            padding: 5px 5px;
+            margin: 0px 2%;
+            border-radius: 5px;
+            font-size: 10px;
+            text-align: center;
+            width: 10%;
+        }
     
+        nav a:hover {
+            color: #00FF00;
+            background: orange;
+            background-image: radial-gradient( circle farthest-corner at 52.1% -29.6%,  rgb(8, 119, 163) 0%, rgb(20, 0, 131) 100.2% );
+        }
+}
