@@ -374,12 +374,12 @@ input[type="date"], input[type="time"], input[type="range"], input#colors_list, 
         height: 20px;
     }
 
-    /*
+    
     .section_column {
-        border-style: solid;
-        border-color: red;
+        border-style: double;
+        border-color: gray;
     }
-    */
+    
 
     /* 1x4 */
     .text.section.d1x4 {
