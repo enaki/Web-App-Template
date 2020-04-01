@@ -1,4 +1,4 @@
-var myVar = setInterval(display_time, 1000);
+var myVar;
 
 function section1Function() {
     //alert("Page is loaded");
@@ -6,44 +6,51 @@ function section1Function() {
     display_time();
     document.getElementById("url_curent").innerHTML = window.location.href;
     window.navigator.geolocation.getCurrentPosition(showPosition);
-    document.getElementById("browser_utilizat").innerHTML = window.navigator.appName + " " + window.navigator.appVersion; 
+    document.getElementById("browser_utilizat").innerHTML = window.navigator.appName + " " + window.navigator.appVersion;
     document.getElementById("sistem_operare").innerHTML = window.navigator.platform;
-    
+
     change_pen_color();
+    myVar = setInterval(display_time, 1000);
 }
 
-function display_time(){
-    document.getElementById("timp_curent").innerHTML = show_time();
+function display_time() {
+    try{
+        document.getElementById("timp_curent").innerHTML = show_time();
+    }
+    catch(err){
+        console.log("Cleared succesfully");
+        clearInterval(myVar);
+    }
 }
 
-function showPosition(position){
+function showPosition(position) {
     document.getElementById("locatie").innerHTML = "Lat: " + position.coords.latitude + " Lon: " + position.coords.longitude;
 }
 
-function show_date(){
+function show_date() {
     let today = new Date();
     let dd = String(today.getDate()).padStart(2, '0');
-    let mm = String(today.getMonth()+1).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0');
     let yyyy = String(today.getFullYear());
     return mm + '/' + dd + '/' + yyyy;
 }
 
-function show_time(){
+function show_time() {
     let today = new Date();
     return String(today.getHours()).padStart(2, '0') + ":" + String(today.getMinutes()).padStart(2, '0') + ":" + String(today.getSeconds()).padStart(2, '0');
 }
 
-function section2Function_LOTO(){
+function section2Function_LOTO() {
     console.log("test");
     var temp = [];
     var temp_in = [];
     text = "</br>Numerele câștigătoare sunt: <span class=\"loto_out_response\">";
     const regex = /[A-F0-9]{2}/g;
 
-    for (var i = 0; i < 8; i++){
-        
-        temp_in[i] = document.getElementById('loto_in_'+i).value;
-        if (temp_in[i].toString().length != 2){
+    for (var i = 0; i < 8; i++) {
+
+        temp_in[i] = document.getElementById('loto_in_' + i).value;
+        if (temp_in[i].toString().length != 2) {
             alert("Invalid input!");
             return;
         }
@@ -57,7 +64,7 @@ function section2Function_LOTO(){
         temp_in[i] = parseInt(temp_in[i]);
     }
 
-    for (i = 0; i < 7; i++){
+    for (i = 0; i < 7; i++) {
         temp[i] = Math.floor(Math.random() * 255);
         text = text.concat(temp[i].toString(16).toUpperCase().padStart(2, '0') + ", ")
     }
@@ -72,7 +79,7 @@ function section2Function_LOTO(){
     document.getElementById("loto_out").innerHTML = text;
 }
 
-function change_canvas_color(){
+function change_canvas_color() {
     let canvas = document.getElementById("section3_canvas");
     let ctx = canvas.getContext("2d");
     ctx.fillStyle = document.getElementById("change_canvas_color").value;
@@ -80,18 +87,18 @@ function change_canvas_color(){
 
 }
 
-function change_pen_color(){
+function change_pen_color() {
     let canvas = document.getElementById("section3_canvas");
     let ctx = canvas.getContext("2d");
     ctx.fillStyle = document.getElementById("change_pen_color").value;
     ctx.strokeStyle = document.getElementById("change_pen_color").value;;
 }
 
-var firstTime=true;
+var firstTime = true;
 var x1, y1;
 
-function drawRectangle(){
-    if (firstTime){
+function drawRectangle() {
+    if (firstTime) {
         let canvas = document.getElementById("section3_canvas");
         const rect = canvas.getBoundingClientRect()
         x1 = event.clientX - rect.left;
@@ -104,57 +111,57 @@ function drawRectangle(){
         let x2 = event.clientX - rect.left;
         let y2 = event.clientY - rect.top;
         console.log("Second time x: " + x2 + " y: " + y2);
-        
+
         let ctx = canvas.getContext("2d");
         ctx.beginPath();
-        ctx.rect(x1, y1, x2-x1, y2-y1);
+        ctx.rect(x1, y1, x2 - x1, y2 - y1);
         ctx.stroke();
-        firstTime=true;
+        firstTime = true;
     }
 }
 
-function section4Line_insert(){
+function section4Line_insert() {
     let table = document.getElementById("javascript_table");
-    try{
+    try {
         var number_columns = table.rows[0].cells.length;
-    } catch (e){
+    } catch (e) {
         number_columns = 0;
     }
-    let number_rows =  table.rows.length;
+    let number_rows = table.rows.length;
 
     let index = document.getElementById("table_position_insert").value;
-    if (index==null){
-        index=0;
-    } else if(index > number_rows){
+    if (index == null) {
+        index = 0;
+    } else if (index > number_rows) {
         index = number_rows;
     }
 
     let color = document.getElementById("change_table_bg").value;
 
-    let new_row = table.insertRow(index); 
+    let new_row = table.insertRow(index);
     new_row.style.background = color;
 
     let i = 0;
-    for (i = 0; i < number_columns; i++){
+    for (i = 0; i < number_columns; i++) {
         new_row.insertCell(i);
     }
 
 }
 
-function section4Column_insert(){
+function section4Column_insert() {
     let table = document.getElementById("javascript_table");
-    try{
+    try {
         var number_columns = table.rows[0].cells.length;
-    } catch (e){
+    } catch (e) {
         section4Line_insert();
         number_columns = table.rows[0].cells.length
     }
-    let number_rows =  table.rows.length;
+    let number_rows = table.rows.length;
 
     let index = document.getElementById("table_position_insert").value;
-    if (index==null){
-        index=0;
-    } else if(index > number_columns){
+    if (index == null) {
+        index = 0;
+    } else if (index > number_columns) {
         index = number_columns;
     }
 
@@ -162,62 +169,88 @@ function section4Column_insert(){
 
     let rows = table.rows;
     let i = 0;
-    for (i = 0; i < number_rows; i++){
+    for (i = 0; i < number_rows; i++) {
         let new_cell = rows[i].insertCell(index);
         new_cell.style.background = color
     }
 }
 
-function section4Line_delete(){
+function section4Line_delete() {
     let table = document.getElementById("javascript_table");
-    let number_rows =  table.rows.length;
-    if (number_rows == 0){
+    let number_rows = table.rows.length;
+    if (number_rows == 0) {
         alert("Tabelul nu are linii");
         return;
     }
     let index = document.getElementById("table_position_insert").value;
-    if (index==null){
-        index=0;
-    } else if(index >= number_rows){
+    if (index == null) {
+        index = 0;
+    } else if (index >= number_rows) {
         index = number_rows - 1;
     }
-    
+
     table.deleteRow(index);
 }
 
-function section4Column_delete(){
+function section4Column_delete() {
     let table = document.getElementById("javascript_table");
-    let number_rows =  table.rows.length;
-    if (number_rows == 0){
+    let number_rows = table.rows.length;
+    if (number_rows == 0) {
         alert("Tabelul nu are linii");
         return;
     }
     let number_columns = table.rows[0].cells.length;
-    if (number_columns == 0){
+    if (number_columns == 0) {
         alert("Tabelul nu are coloane");
         return;
     }
     let index = document.getElementById("table_position_insert").value;
-    if (index==null){
-        index=0;
-    } else if(index >= number_columns){
+    if (index == null) {
+        index = 0;
+    } else if (index >= number_columns) {
         index = number_columns - 1;
     }
     let rows = table.rows;
     let i = 0;
-    for (i = 0; i < number_rows; i++){
+    for (i = 0; i < number_rows; i++) {
         rows[i].deleteCell(index);
     }
 }
 
-function changeLayout_4x1(){
+function changeLayout_4x1() {
     document.getElementById("text_section").className = "text section d4x1";
 }
 
-function changeLayout_1x4(){
+function changeLayout_1x4() {
     document.getElementById("text_section").className = "text section d1x4";
 }
 
-function changeLayout_2x2(){
+function changeLayout_2x2() {
     document.getElementById("text_section").className = "text section d2x2";
+}
+
+function schimbaContinut(resursa, jsFisier, jsFunctie) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("continut").innerHTML = this.responseText;
+            if (jsFisier) {
+                var elementScript = document.createElement('script');
+                elementScript.onload = function () {
+                    console.log("hello");
+                    if (jsFunctie) {
+                        window[jsFunctie]();
+                    }
+                };
+                elementScript.src = jsFisier;
+                document.head.appendChild(elementScript);
+            } else {
+                if (jsFunctie) {
+                    window[jsFunctie]();
+                }
+            }
+        }
+    };
+    xhttp.open("GET", resursa + ".html", true);
+    xhttp.send();
 }

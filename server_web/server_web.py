@@ -18,6 +18,10 @@ def get_content_type(extension):
 		return "text/gif"
 	elif extension == 'ico':
 		return "image/x-icon"
+	elif extension == 'xml':
+		return "application/xml"
+	elif extension == 'json':
+		return 'application/json'
 
 
 def http_builder(data, filename=None):
@@ -62,7 +66,7 @@ def treat_client(clientsocket, address):
 
 				break
 			except FileNotFoundError: 
-				data="Pagina ceruta nu exista"
+				data="Pagina {} ceruta nu exista".format(linieDeStart.split()[1])
 				html_response = http_builder(data) + data
 				clientsocket.sendall(html_response.encode(encoding = 'UTF-8'))
 				break

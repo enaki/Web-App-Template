@@ -1,115 +1,56 @@
-<!DOCTYPE html>
-<html lang="ro-RO">
+<svg width="700" height="500">
+    <defs>
+        <linearGradient id="gradient" gradientTransform="rotate(65)">
+            <stop offset="5%" stop-color="gold" />
+            <stop offset="95%" stop-color="orange" />
+        </linearGradient>
+    </defs>
+    <defs>
+        <radialGradient id="radial_gradient">
+            <stop offset="10%" stop-color="blue" />
+            <stop offset="95%" stop-color="black" />
+        </radialGradient>
+    </defs>
+    <!-- Corpul -->
+    <rect x="150" y="50" width="200" height="400" rx="20" ry="20" stroke="black" stroke-width="4"
+        fill="url('#gradient')" />
 
-<head>
-    <title>HTML</title>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="css/stil.css">
-</head>
+    <!-- Piciorusele din spate -->
+    <rect x="100" y="300" width="50" height="150" rx="20" ry="20" stroke="black" stroke-width="4"
+        fill="url('#gradient')" />
+    <line x1="120" y1="450" x2="120" y2="430" stroke="black" stroke="black" stroke-width="4" />
+    <line x1="130" y1="450" x2="130" y2="430" stroke="black" stroke="black" stroke-width="4" />
 
-<body>
-    <!--Partea a 1-a-->
-    <div id="inceput">
-        <header>
-            <h1>
-                <img src="imagini/logo.png" alt="Logo Page" width="30" height="30">
-                Programare Web</h1>
-        </header>
-        <hr />
-        <nav><a href="index.html">
-                Acasă
-            </a>
-            &nbsp; &nbsp; &nbsp;
-            <a href="inregistreaza.html">
-                Înregistrează
-            </a>
-            &nbsp; &nbsp; &nbsp;
-            <a href="video.html">
-                Video
-            </a>
-            &nbsp; &nbsp; &nbsp;
-            <a href="desen.html">
-                Desen
-            </a>
-            &nbsp; &nbsp; &nbsp;
-            <a href="invat_js.html">
-                Învăț JavaScript
-            </a>
-            &nbsp; &nbsp; &nbsp;
-            <a href="despre_html.html">
-                Despre
-            </a>
-        </nav>
-        <hr />
-    </div>
-    <div id="cuprins">
-        <main>
-            <svg width="700" height="500">
-                <defs>
-                    <linearGradient id="gradient" gradientTransform="rotate(65)">
-                        <stop offset="5%" stop-color="gold" />
-                        <stop offset="95%" stop-color="orange" />
-                    </linearGradient>
-                </defs>
-                <defs>
-                    <radialGradient id="radial_gradient">
-                        <stop offset="10%" stop-color="blue" />
-                        <stop offset="95%" stop-color="black" />
-                    </radialGradient>
-                </defs>
-                <!-- Corpul -->
-                <rect x="150" y="50" width="200" height="400" rx="20" ry="20" stroke="black" stroke-width="4"
-                    fill="url('#gradient')" />
+    <rect x="350" y="300" width="50" height="150" rx="20" ry="20" stroke="black" stroke-width="4"
+        fill="url('#gradient')" />
+    <line x1="370" y1="450" x2="370" y2="430" stroke="black" stroke="black" stroke-width="4" />
+    <line x1="380" y1="450" x2="380" y2="430" stroke="black" stroke="black" stroke-width="4" />
 
-                <!-- Piciorusele din spate -->
-                <rect x="100" y="300" width="50" height="150" rx="20" ry="20" stroke="black" stroke-width="4"
-                    fill="url('#gradient')" />
-                <line x1="120" y1="450" x2="120" y2="430" stroke="black" stroke="black" stroke-width="4" />
-                <line x1="130" y1="450" x2="130" y2="430" stroke="black" stroke="black" stroke-width="4" />
+    <!-- Piciorusele din fata -->
+    <rect x="190" y="420" width="60" height="50" stroke="black" stroke-width="4" fill="url('#gradient')" />
+    <line x1="215" y1="470" x2="215" y2="450" stroke="black" stroke="black" stroke-width="4" />
+    <line x1="225" y1="470" x2="225" y2="450" stroke="black" stroke="black" stroke-width="4" />
 
-                <rect x="350" y="300" width="50" height="150" rx="20" ry="20" stroke="black" stroke-width="4"
-                    fill="url('#gradient')" />
-                <line x1="370" y1="450" x2="370" y2="430" stroke="black" stroke="black" stroke-width="4" />
-                <line x1="380" y1="450" x2="380" y2="430" stroke="black" stroke="black" stroke-width="4" />
+    <rect x="250" y="420" width="60" height="50" stroke="black" stroke-width="4" fill="url('#gradient')" />
+    <line x1="275" y1="470" x2="275" y2="450" stroke="black" stroke="black" stroke-width="4" />
+    <line x1="285" y1="470" x2="285" y2="450" stroke="black" stroke="black" stroke-width="4" />
 
-                <!-- Piciorusele din fata -->
-                <rect x="190" y="420" width="60" height="50" stroke="black" stroke-width="4" fill="url('#gradient')" />
-                <line x1="215" y1="470" x2="215" y2="450" stroke="black" stroke="black" stroke-width="4" />
-                <line x1="225" y1="470" x2="225" y2="450" stroke="black" stroke="black" stroke-width="4" />
+    <!-- Ochii -->
+    <circle cx="220" cy="100" r="10" stroke="black" stroke-width="4" fill="url('#radial_gradient')" />
+    <circle cx="280" cy="100" r="10" stroke="black" stroke-width="4" fill="url('#radial_gradient')" />
 
-                <rect x="250" y="420" width="60" height="50" stroke="black" stroke-width="4" fill="url('#gradient')" />
-                <line x1="275" y1="470" x2="275" y2="450" stroke="black" stroke="black" stroke-width="4" />
-                <line x1="285" y1="470" x2="285" y2="450" stroke="black" stroke="black" stroke-width="4" />
+    <!-- Urechile -->
+    <polygon points="170,50 125,50 125,150" stroke="black" stroke-width="4" fill="url('#gradient')" />
+    <polygon points="330,50 375,50 375,150" stroke="black" stroke-width="4" fill="url('#gradient')" />
 
-                <!-- Ochii -->
-                <circle cx="220" cy="100" r="10" stroke="black" stroke-width="4" fill="url('#radial_gradient')" />
-                <circle cx="280" cy="100" r="10" stroke="black" stroke-width="4" fill="url('#radial_gradient')" />
+    <!-- Nasul -->
+    <rect x="230" y="150" width="40" height="30" stroke="black" stroke-width="4" fill="brown" />
 
-                <!-- Urechile -->
-                <polygon points="170,50 125,50 125,150" stroke="black" stroke-width="4" fill="url('#gradient')" />
-                <polygon points="330,50 375,50 375,150" stroke="black" stroke-width="4" fill="url('#gradient')" />
+    <!-- Zambetul -->
+    <line x1="250" y1="180" x2="250" y2="210" stroke="black" stroke="black" stroke-width="4" />
+    <line x1="210" y1="210" x2="290" y2="210" stroke="black" stroke="black" stroke-width="4" />
+    <line x1="190" y1="190" x2="210" y2="210" stroke="black" stroke="black" stroke-width="4" />
+    <line x1="290" y1="210" x2="310" y2="190" stroke="black" stroke="black" stroke-width="4" />
 
-                <!-- Nasul -->
-                <rect x="230" y="150" width="40" height="30" stroke="black" stroke-width="4" fill="brown" />
-
-                <!-- Zambetul -->
-                <line x1="250" y1="180" x2="250" y2="210" stroke="black" stroke="black" stroke-width="4" />
-                <line x1="210" y1="210" x2="290" y2="210" stroke="black" stroke="black" stroke-width="4" />
-                <line x1="190" y1="190" x2="210" y2="210" stroke="black" stroke="black" stroke-width="4" />
-                <line x1="290" y1="210" x2="310" y2="190" stroke="black" stroke="black" stroke-width="4" />
-
-                <text x="440" y="50">HAM! HAM! HAM!</text>
-            </svg>
-        </main>
-    </div>
-    <div id="incheiere">
-        <hr />
-        <footer>
-            &copy;. 2020. Enachi Vasile
-        </footer>
-        <hr />
-    </div><!--  -->
-
-</body>
-
-</html>
+    <text x="440" y="50">HAM! HAM! HAM!</text>
+</svg>
