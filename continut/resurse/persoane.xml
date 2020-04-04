@@ -2,12 +2,12 @@
 <!DOCTYPE persoane SYSTEM "persoane.dtd">
 <persoane>
     <persoana id="1">
-        <nume>Popescu</nume>
-        <prenume>Ion</prenume>
-        <varsta>23</varsta>
+        <nume>Enachi</nume>
+        <prenume>Vasile</prenume>
+        <varsta>21</varsta>
         <adresa>
-            <strada>Alexandru Marinescu</strada>
-            <numar>18 B</numar>
+            <strada>Fluffy Duckling Lane</strada>
+            <numar>18</numar>
             <localitate>Ungheni</localitate>
             <judet>Ungheni</judet>
             <tara>Republica Moldova</tara>
@@ -20,9 +20,9 @@
     <persoana id="2">
         <nume>Ilioi</nume>
         <prenume>Alex</prenume>
-        <varsta>21</varsta>
+        <varsta>22</varsta>
         <adresa>
-            <strada>Mihail Kogalniceanu</strada>
+            <strada>Chicken Dinner Road</strada>
             <numar>23</numar>
             <localitate>Targu Neamt</localitate>
             <judet>Targu Neamt</judet>
@@ -37,11 +37,30 @@
     </persoana>
 
     <persoana id="3">
+        <nume>Atomei</nume>
+        <prenume>Georgiana</prenume>
+        <varsta>21</varsta>
+        <adresa>
+            <strada>Candy Castle Lane</strada>
+            <numar>10</numar>
+            <localitate>Iasi</localitate>
+            <judet>Iasi</judet>
+            <tara>Romania</tara>
+        </adresa>
+        <limba_materna>romana</limba_materna>
+        <limbi_straine> 
+            <limba>engleza</limba>
+            <limba>germana</limba>
+        </limbi_straine>
+        <competente_organizationale>DA</competente_organizationale>
+    </persoana>
+
+    <persoana id="4">
         <nume>Moisii</nume>
         <prenume>Marin</prenume>
         <varsta>21</varsta>
         <adresa>
-            <strada>Mihai Eminescu</strada>
+            <strada>Bell End</strada>
             <numar>38</numar>
             <localitate>Iasi</localitate>
             <judet>Iasi</judet>
@@ -51,6 +70,26 @@
         <limbi_straine> 
             <limba>engleza</limba>
             <limba>franceza</limba>
+        </limbi_straine>
+        <competente_organizationale>DA</competente_organizationale>
+    </persoana>
+
+    <persoana id="5">
+        <nume>Sandu</nume>
+        <prenume>Diana-Elena</prenume>
+        <varsta>22</varsta>
+        <adresa>
+            <strada>Boulevard of Broken Dreams</strada>
+            <numar>100</numar>
+            <localitate>Iasi</localitate>
+            <judet>Iasi</judet>
+            <tara>Romania</tara>
+        </adresa>
+        <limba_materna>romana</limba_materna>
+        <limbi_straine> 
+            <limba>engleza</limba>
+            <limba>germana</limba>
+            <limba>spaniola</limba>
         </limbi_straine>
         <competente_organizationale>DA</competente_organizationale>
     </persoana>

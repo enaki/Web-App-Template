@@ -236,8 +236,9 @@ function schimbaContinut(resursa, jsFisier, jsFunctie) {
             document.getElementById("continut").innerHTML = this.responseText;
             if (jsFisier) {
                 var elementScript = document.createElement('script');
+                elementScript.src = "http://code.jquery.com/jquery-1.7.1.min.js"
                 elementScript.onload = function () {
-                    console.log("hello");
+                    //console.log("hello");
                     if (jsFunctie) {
                         window[jsFunctie]();
                     }

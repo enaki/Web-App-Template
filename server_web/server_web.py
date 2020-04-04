@@ -1,6 +1,8 @@
 import socket
 import re
 import threading
+import json
+
 lock = threading.Lock()
 cerere_number_global = 1
 def get_content_type(extension):
@@ -56,20 +58,62 @@ def treat_client(clientsocket, address):
 		if (pozitie > -1):
 			linieDeStart = cerere[0:pozitie]
 			print('S-a citit linia de start din cerere: ##### ' + linieDeStart + ' #####')
-			filename = "../continut" + linieDeStart.split()[1]
-			try:
-				file = open(filename, "rb")
-				data = file.read()
-				html_response = http_builder(data, filename=filename)
-				#html_response += data
-				clientsocket.sendall(html_response.encode(encoding = 'UTF-8') + data)
+			
+			linieDeStartSplitter = linieDeStart.split()
+			method = linieDeStartSplitter[0]
+			print("Method : {}".format(method))
+			if method == 'GET':
+				filename = "../continut" + linieDeStartSplitter[1]
+				try:
+					file = open(filename, "rb")
+					data = file.read()
+					html_response = http_builder(data, filename=filename)
+					#html_response += data
+					clientsocket.sendall(html_response.encode(encoding = 'UTF-8') + data)
 
-				break
-			except FileNotFoundError: 
-				data="Pagina {} ceruta nu exista".format(linieDeStart.split()[1])
-				html_response = http_builder(data) + data
-				clientsocket.sendall(html_response.encode(encoding = 'UTF-8'))
-				break
+					break
+				except FileNotFoundError: 
+					data="Pagina {} ceruta nu exista".format(linieDeStart.split()[1])
+					html_response = http_builder(data) + data
+					clientsocket.sendall(html_response.encode(encoding = 'UTF-8'))
+					break
+			elif method == 'POST':
+				if linieDeStartSplitter[1] == '/api/utilizatori':
+					post_body = cerere.split('\r\n\r\n')[1]
+					post_body_fields = post_body.split('&')
+					for field in post_body_fields:
+						if field.find("username") > -1:
+							username = field.split('=')[1]
+						if field.find("password") > -1:
+							password = field.split('=')[1]
+					print("USERNAME {}\nPAROLA {}\n".format(username, password))
+					if (username != '' and password != ''):
+						with open('../continut/resurse/utilizatori.json') as json_file:
+							users = json.load(json_file)
+							json_file.close()
+							exists = False
+							for user in users:
+								if user['utilizator'] == username:
+									data="Operatiune esuata. Utilizatorul dat exista deja"
+									exists = True
+									break
+							if not exists:
+								data="Operatiune cu succes. Utilizatorul a fost adaugat"
+								users.append({'utilizator': username, 'parola': password})
+								print(users)
+								with open('../continut/resurse/utilizatori.json', 'w') as json_file:
+									json_file.write(json.dumps(users))
+					else:
+						data="Operatiune esuata. Parola si numele de utilizator nu trebuie sa fie goale"
+					html_response = http_builder(data) + data
+					clientsocket.sendall(html_response.encode(encoding = 'UTF-8'))
+					break
+
+				else:
+					data="Pagina {} ceruta nu exista".format(linieDeStart.split()[1])
+					html_response = http_builder(data) + data
+					clientsocket.sendall(html_response.encode(encoding = 'UTF-8'))
+					break
 		else:
 			break
 			
