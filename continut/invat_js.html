@@ -1,83 +1,85 @@
+<aside>
+    <a href="#section_1"> Sectiunea 1</a>
+    <a href="#section_2"> Sectiunea 2</a>
+    <a href="#section_3"> Sectiunea 3</a>
+    <a href="#section_4"> Sectiunea 4</a>
+    <a href="" onclick="changeLayout_4x1(); return false;"> 4x1 </a>
+    <a href="" onclick="changeLayout_1x4(); return false;"> 1x4 </a>
+    <a href="" onclick="changeLayout_2x2(); return false;"> 2x2 </a>
+</aside>
+<div id="text_section" class="text section d4x1">
 
-            <aside>
-                <a href="#section_1"> Sectiunea 1</a>
-                <a href="#section_2"> Sectiunea 2</a>
-                <a href="#section_3"> Sectiunea 3</a>
-                <a href="#section_4"> Sectiunea 4</a>
-                <a href="" onclick="changeLayout_4x1(); return false;"> 4x1 </a>
-                <a href="" onclick="changeLayout_1x4(); return false;"> 1x4 </a>
-                <a href="" onclick="changeLayout_2x2(); return false;"> 2x2 </a>
-            </aside>
-            <div id="text_section" class="text section d4x1">
-                
-                <section id="section_1" class="section_column">
-                    <h2>Secțiunea 1: Informații despre utilizator</h2>
-                    <span id="info">Data curentă: </span><span id="data_curenta"></span></br>
-                    <span id="info">Ora curentă: <span id="timp_curent"></span></br>
-                    <span id="info">URL curent: <span id="url_curent"></span></br>
-                    <span id="info">Locație: </span><span id="locatie"></span></br>
-                    <span id="info">Browser utilizat: </span><span id="browser_utilizat"></span></br>
-                    <span id="info">Sistem de operare: </span><span id="sistem_operare"></span></br>
-                </section>
+    <section id="section_1" class="section_column">
+        <h2>Secțiunea 1: Informații despre utilizator</h2>
+        <span id="info">Data curentă: </span><span id="data_curenta"></span></br>
+        <span id="info">Ora curentă: <span id="timp_curent"></span></br>
+            <span id="info">URL curent: <span id="url_curent"></span></br>
+                <span id="info">Locație: </span><span id="locatie"></span></br>
+                <span id="info">Browser utilizat: </span><span id="browser_utilizat"></span></br>
+                <span id="info">Sistem de operare: </span><span id="sistem_operare"></span></br>
+    </section>
 
-                <section id="section_2" class="section_column">
-                    <h2>Secțiunea 2: Internet Loto</h2>
-                    
-                        <form id="form_loto_input">
-                            <input id="loto_in_0" pattern="[A-Z0-9]{2}" value="00"></input>
-                            <input id="loto_in_1" pattern="[A-Z0-9]{2}" value="00"></input>
-                            <input id="loto_in_2" pattern="[A-Z0-9]{2}" value="00"></input>
-                            <input id="loto_in_3" pattern="[A-Z0-9]{2}" value="00"></input>
-                            <input id="loto_in_4" pattern="[A-Z0-9]{2}" value="00"></input>
-                            <input id="loto_in_5" pattern="[A-Z0-9]{2}" value="00"></input>
-                            <input id="loto_in_6" pattern="[A-Z0-9]{2}" value="00"></input>
-                            <input id="loto_in_7" pattern="[A-Z0-9]{2}" value="00"></input>
-                            <button class="button button_dimensions" onclick="section2Function_LOTO(); return false;">EXTRAGE</button>
-                        </form>
+    <section id="section_2" class="section_column">
+        <h2>Secțiunea 2: Internet Loto</h2>
 
-                        <span id="loto_out"></span>
-                </section>
+        <form id="form_loto_input">
+            <input id="loto_in_0" pattern="[A-Z0-9]{2}" value="00"></input>
+            <input id="loto_in_1" pattern="[A-Z0-9]{2}" value="00"></input>
+            <input id="loto_in_2" pattern="[A-Z0-9]{2}" value="00"></input>
+            <input id="loto_in_3" pattern="[A-Z0-9]{2}" value="00"></input>
+            <input id="loto_in_4" pattern="[A-Z0-9]{2}" value="00"></input>
+            <input id="loto_in_5" pattern="[A-Z0-9]{2}" value="00"></input>
+            <input id="loto_in_6" pattern="[A-Z0-9]{2}" value="00"></input>
+            <input id="loto_in_7" pattern="[A-Z0-9]{2}" value="00"></input>
+            <button class="button button_dimensions" onclick="section2Function_LOTO(); return false;">EXTRAGE</button>
+        </form>
+        <span id="loto_out"></span>
+    </section>
 
-                <section id="section_3" class="section_column">
-                    <h2>Secțiunea 3: Învățăm să desenăm</h2>
-                    <fieldset class="canvas_menu">
-                        <legend>Opțiuni de desenare</legend>
-                        <label>Background:</label> 
-                        <input id="change_canvas_color" type="color" onchange="change_canvas_color(); return false;">
-                        <br />
-                        <label>Pen:</label> 
-                        <input id="change_pen_color" type="color" value="#FFFFFF" onchange="change_pen_color(); return false;"> 
-                    </fieldset>
-                    <canvas id="section3_canvas" width="640" height="480" onclick="drawRectangle(); return false;"></canvas>
-                </section>
+    <section id="section_3" class="section_column">
+        <h2>Secțiunea 3: Învățăm să desenăm</h2>
+        <fieldset class="canvas_menu">
+            <legend>Opțiuni de desenare</legend>
+            <label>Background:</label>
+            <input id="change_canvas_color" type="color" onchange="change_canvas_color(); return false;">
+            <br />
+            <label>Pen:</label>
+            <input id="change_pen_color" type="color" value="#FFFFFF" onchange="change_pen_color(); return false;">
+        </fieldset>
+        <canvas id="section3_canvas" width="640" height="480" onclick="drawRectangle(); return false;"></canvas>
+    </section>
 
-                <section id="section_4" class="section_column">
-                    <h2>Secțiunea 4: Învățăm să inserăm tabele</h2>
-                    <fieldset class="table_menu">
-                        <legend>Opțiuni de inserare</legend>
-                        <label>Background:</label> 
-                        <input id="change_table_bg" type="color" value="#27ff25">
-                        <br />
-                        <label>Pozitie:</label> 
-                        <input id="table_position_insert" type="number" value="0" min="0" placeholder="index" value="#FFFFFF">
-                        <br /> 
-                        <button class="button button_dimensions_2" onclick="section4Line_insert(); return false;">Insert Line</button>
-                        <button class="button button_dimensions_2" onclick="section4Column_insert(); return false;">Insert Column</button>
-                        <br /> 
-                        <button class="button button_dimensions_2" onclick="section4Line_delete(); return false;">Delete Line</button>
-                        <button class="button button_dimensions_2" onclick="section4Column_delete(); return false;">Delete Column</button>
-                    </fieldset>
+    <section id="section_4" class="section_column">
+        <h2>Secțiunea 4: Învățăm să inserăm tabele</h2>
+        <fieldset class="table_menu">
+            <legend>Opțiuni de inserare</legend>
+            <label>Background:</label>
+            <input id="change_table_bg" type="color" value="#27ff25">
+            <br />
+            <label>Pozitie:</label>
+            <input id="table_position_insert" type="number" value="0" min="0" placeholder="index" value="#FFFFFF">
+            <br />
+            <button class="button button_dimensions_2" onclick="section4Line_insert(); return false;">Insert
+                Line</button>
+            <button class="button button_dimensions_2" onclick="section4Column_insert(); return false;">Insert
+                Column</button>
+            <br />
+            <button class="button button_dimensions_2" onclick="section4Line_delete(); return false;">Delete
+                Line</button>
+            <button class="button button_dimensions_2" onclick="section4Column_delete(); return false;">Delete
+                Column</button>
+        </fieldset>
 
-                    <table id="javascript_table" class="table_style_1">
-                        <tr>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                        </tr>
+        <table id="javascript_table" class="table_style_1">
+            <tr>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
 
-                    </table>
-                </section>
-            </div>
+        </table>
+    </section>
+</div>

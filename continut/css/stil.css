@@ -13,6 +13,27 @@ table, th, td {
     border-color: azure;
 }
 
+
+.table_style_2 th {
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    color: white;
+}
+.table_style_2::first-letter {
+    color: white;
+}
+
+
+.table_style_2 tr:nth-child(even) {
+    background: rgb(245, 242, 76);
+    color: black;
+   
+}
+.table_style_2 tr:nth-child(odd) {
+    background: rgb(149, 235, 236);
+    color: black;
+}
+
 body {
     background-image: url("../imagini/bricks_bg.jpg");
     font-family: "Times New Roman", Times, serif;
@@ -39,7 +60,7 @@ aside a:hover {
 }
 
 input[type="text"], input[type="password"], input[type="email"], input[type="tel"], input[type="select"], textarea, select, datalist,
-input[type="date"], input[type="time"], input[type="range"], input#colors_list, input#mancare, input[type="url"]{
+input[type="date"], input[type="time"], input[type="range"], input[type="number"], input#colors_list, input#mancare, input[type="url"]{
     background-color: rgba(0,0,0,1);
     color: rgb(28, 248, 47);
     width: 200px;
@@ -82,19 +103,20 @@ input[type="date"], input[type="time"], input[type="range"], input#colors_list, 
     nav {
         padding: 10px;
         background-color: honeydew;
+        width: 100%;
     }
          nav a {
             color: white;
             text-decoration: none;
             background-image: radial-gradient( circle farthest-corner at 52.1% -29.6%,  rgba(144,17,105,1) 0%, rgba(51,0,131,1) 100.2% );
-            margin: auto;
             padding: 0px, 0px;
             border-radius: 5px;
             font-size: 20px;
             text-align: center;
             width: 8%;
-            margin-left: 3%;
-	        float: left;
+            float: left;
+            margin-left: 2.5%;
+            
         }
     
         nav a:hover {
@@ -237,15 +259,25 @@ input[type="date"], input[type="time"], input[type="range"], input#colors_list, 
         padding:16px;
     }
 
-    
-
     #informatii_generale, #informatii_personale {
         margin: auto;
     }
 
-    #verifica_user {
+    #verifica_user, #cumparaturi_fieldset {
         margin: auto;
         margin-top: 20px;
+    }
+
+    #lista_cumparaturi {
+        margin-top: 20px;
+    }
+
+    #db_name_cumparaturi {
+        color: greenyellow;
+        text-align: center;
+        width: 20%;
+        margin-left: 40%;
+        margin-right: 40%;
     }
 
     .general_inf, .personal_inf {
@@ -358,7 +390,7 @@ input[type="date"], input[type="time"], input[type="range"], input#colors_list, 
         color: white;
     }
 
-    .table_style_1, #section3_canvas{
+    .table_style_1, #section3_canvas,  .table_style_2{
         margin: auto;
         text-align: center;
     }
@@ -367,7 +399,7 @@ input[type="date"], input[type="time"], input[type="range"], input#colors_list, 
         margin: auto;
     }
 
-    .table_style_1 th, .table_style_1 td, .table_style_1 tr{
+    .table_style_1 th, .table_style_1 td, .table_style_1 tr,  .table_style_2 th, .table_style_2 td, .table_style_2 tr{
         width: 100px;
         height: 20px;
     }
@@ -408,11 +440,13 @@ input[type="date"], input[type="time"], input[type="range"], input#colors_list, 
         grid-template-columns: 50% 50%;
     }
 
-    #verifica_account{
+    span#verifica_account{
         margin: auto;
         color: greenyellow;
-        width: 50%;
-        margin-left: 25%;
+        text-align: center;
+        width: 10%;
+        margin-left: 45%;
+
     }
 
 

@@ -63,7 +63,7 @@ def treat_client(clientsocket, address):
 			method = linieDeStartSplitter[0]
 			print("Method : {}".format(method))
 			if method == 'GET':
-				filename = "../continut" + linieDeStartSplitter[1]
+				filename = "../continut" + (linieDeStartSplitter[1] if linieDeStartSplitter[1] != "/" else "/index.html")
 				try:
 					file = open(filename, "rb")
 					data = file.read()

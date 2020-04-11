@@ -1,0 +1,26 @@
+<h2>Lista mea de produse</h2>
+<fieldset id="cumparaturi_fieldset">
+    <legend>Haideți la cumpărături:</legend>
+    <label for="cumparaturi_nume">Nume:</label>
+    <input type="text" name="cumparaturi_nume" id="cumparaturi_nume"><br />
+
+    <label for="cumparaturi_cantitate">Cantitate:</label>
+    <input type="text" name="cumparaturi_cantitate" min="1" id="cumparaturi_cantitate"><br />
+
+    <label for="api_storage">API Storage</label>
+    <input type="radio" id="api_storage" name="storage" value="storage_api" onclick="changeStorage(); " checked><br>
+
+    <label for="index_db">Index DB</label>
+    <input type="radio" id="index_db" name="storage" value="index_db" onclick="changeStorage(); "><br>
+
+    <button class="button button_dimensions_2" onclick="clearTable(); return false;">Clear</button>
+    <button class="button button_dimensions_2" onclick="Cumpara(); return false;">Cumpără</button>
+</fieldset>
+
+<span id="cumpara_produse">
+    </br>
+    <span id="db_name_cumparaturi" class="text">Using the STORAGE API</span>
+    <table id="lista_cumparaturi" class="table_style_2">
+        <tr><th>Id</th><th>Produs</th><th>Cantitate</th></tr>
+    </table>
+</span>

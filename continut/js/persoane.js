@@ -11,8 +11,10 @@ function incarcaPersoane() {
 
   function populateTable(xml) {
     var i, j;
+    console.log(xml);
     var xmlDoc = xml.responseXML;
-    var table="<table class=\"table_style_1\"><tr><th>Nume</th><th>Prenume</th><th>Varsta</th><th>Tara</th><th>Localitate</th><th>Adresa</th><th>Limbi Materna</th></tr>";
+    console.log(xmlDoc);
+    var table="<table class=\"table_style_2\"><tr><th>Nume</th><th>Prenume</th><th>Varsta</th><th>Tara</th><th>Localitate</th><th>Adresa</th><th>Limbi Materna</th></tr>";
     var x = xmlDoc.getElementsByTagName("persoana");
     console.log(x.length);
     for (i = 0; i < x.length; i++) { 
