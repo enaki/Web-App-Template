@@ -2,6 +2,7 @@ import socket
 import re
 import threading
 import json
+import gzip
 
 lock = threading.Lock()
 cerere_number_global = 1
@@ -26,14 +27,15 @@ def get_content_type(extension):
 		return 'application/json'
 
 
-def http_builder(data, filename=None):
+def http_builder(data, filename=None, compress=False):
 	html_response = "HTTP/1.1 200 OK\r\n"
 	html_response += "Content-Length: "+str(len(data))+"\r\n"
 	if filename:
 		html_response += "Content-Type: {}\r\n".format(get_content_type(filename.split('.')[-1]))
 	else:
 		html_response += "Content-Type: text/html\r\n"
-	#html_response += "Content-Encoding: gzip\r\n"
+	if compress:
+		html_response += "Content-Encoding: gzip\r\n"
 	html_response += "Server: server_web.py\r\n\r\n"
 	return html_response
 
@@ -59,6 +61,12 @@ def treat_client(clientsocket, address):
 			linieDeStart = cerere[0:pozitie]
 			print('S-a citit linia de start din cerere: ##### ' + linieDeStart + ' #####')
 			
+			need_compression = False
+			pozitieGzip = cerere.find('gzip')
+			if(pozitieGzip > -1):
+				print("Encoding accepted")
+				need_compression = True
+
 			linieDeStartSplitter = linieDeStart.split()
 			method = linieDeStartSplitter[0]
 			print("Method : {}".format(method))
@@ -67,15 +75,21 @@ def treat_client(clientsocket, address):
 				try:
 					file = open(filename, "rb")
 					data = file.read()
-					html_response = http_builder(data, filename=filename)
+					if need_compression:
+						data = gzip.compress(data)
+					html_response = http_builder(data, filename=filename, compress=need_compression)
 					#html_response += data
+					print(html_response)
 					clientsocket.sendall(html_response.encode(encoding = 'UTF-8') + data)
 
 					break
 				except FileNotFoundError: 
 					data="Pagina {} ceruta nu exista".format(linieDeStart.split()[1])
-					html_response = http_builder(data) + data
-					clientsocket.sendall(html_response.encode(encoding = 'UTF-8'))
+					if need_compression:
+						data = gzip.compress(data.encode())
+					html_response = http_builder(data, compress=need_compression)
+
+					clientsocket.sendall(html_response.encode(encoding = 'UTF-8') + data)
 					break
 			elif method == 'POST':
 				if linieDeStartSplitter[1] == '/api/utilizatori':
@@ -105,14 +119,18 @@ def treat_client(clientsocket, address):
 									json_file.write(json.dumps(users))
 					else:
 						data="Operatiune esuata. Parola si numele de utilizator nu trebuie sa fie goale"
-					html_response = http_builder(data) + data
-					clientsocket.sendall(html_response.encode(encoding = 'UTF-8'))
+					if need_compression:
+						data = gzip.compress(data.encode())
+					html_response = http_builder(data, compress=need_compression)
+					clientsocket.sendall(html_response.encode(encoding = 'UTF-8') + data)
 					break
 
 				else:
 					data="Pagina {} ceruta nu exista".format(linieDeStart.split()[1])
-					html_response = http_builder(data) + data
-					clientsocket.sendall(html_response.encode(encoding = 'UTF-8'))
+					if need_compression:
+						data = gzip.compress(data.encode())
+					html_response = http_builder(data, compress=need_compression)
+					clientsocket.sendall(html_response.encode(encoding = 'UTF-8') + data)
 					break
 		else:
 			break

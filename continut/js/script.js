@@ -46,7 +46,6 @@ function section2Function_LOTO() {
     var temp_in = [];
     text = "</br>Numerele câștigătoare sunt: <span class=\"loto_out_response\">";
     const regex = /[A-F0-9]{2}/g;
-
     for (var i = 0; i < 8; i++) {
 
         temp_in[i] = document.getElementById('loto_in_' + i).value;
@@ -61,9 +60,9 @@ function section2Function_LOTO() {
             alert("Invalid input!");
             return;
         }
-        temp_in[i] = parseInt(temp_in[i]);
+        temp_in[i] = parseInt("0x" + temp_in[i]);
     }
-
+    console.log(temp_in);
     for (i = 0; i < 7; i++) {
         temp[i] = Math.floor(Math.random() * 255);
         text = text.concat(temp[i].toString(16).toUpperCase().padStart(2, '0') + ", ")
