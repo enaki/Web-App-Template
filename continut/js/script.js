@@ -50,14 +50,14 @@ function section2Function_LOTO() {
 
         temp_in[i] = document.getElementById('loto_in_' + i).value;
         if (temp_in[i].toString().length != 2) {
-            alert("Invalid input!");
+            alert("Invalid input. Number length should be " + (i+1) + " digits!");
             return;
         }
         //console.log(temp_in[i]);
         found = temp_in[i].toString().match(/[A-F0-9]{2}/g);
         //console.log(found);
         if (found == null) {
-            alert("Invalid input!");
+            alert("Invalid format input! You should use [0-9A-F]");
             return;
         }
         temp_in[i] = parseInt("0x" + temp_in[i]);
@@ -115,6 +115,7 @@ function drawRectangle() {
         ctx.beginPath();
         ctx.rect(x1, y1, x2 - x1, y2 - y1);
         ctx.stroke();
+        //ctx.fill();
         firstTime = true;
     }
 }

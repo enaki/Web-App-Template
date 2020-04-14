@@ -3,6 +3,7 @@ import re
 import threading
 import json
 import gzip
+import urllib.parse
 
 lock = threading.Lock()
 cerere_number_global = 1
@@ -95,11 +96,56 @@ def treat_client(clientsocket, address):
 				if linieDeStartSplitter[1] == '/api/utilizatori':
 					post_body = cerere.split('\r\n\r\n')[1]
 					post_body_fields = post_body.split('&')
+					user_dict = {}
 					for field in post_body_fields:
 						if field.find("username") > -1:
 							username = field.split('=')[1]
-						if field.find("password") > -1:
+							if username != "":
+								user_dict['utilizator'] = urllib.parse.unquote_plus(username)
+						elif field.find("password") > -1:
 							password = field.split('=')[1]
+							if password != "":
+								user_dict['parola'] = urllib.parse.unquote_plus(password)
+						elif field.find("nume") > -1:
+							nume = field.split('=')[1]
+							if nume != "":
+								user_dict['nume'] = urllib.parse.unquote_plus(nume)
+						elif field.find("prenume") > -1:
+							prenume = field.split('=')[1]
+							if prenume != "":
+								user_dict['prenume'] = urllib.parse.unquote_plus(prenume)
+						elif field.find("email") > -1:
+							email = field.split('=')[1]
+							if email != "":
+								user_dict['email'] = urllib.parse.unquote_plus(email)
+						elif field.find("color") > -1:
+							color = field.split('=')[1]
+							if color != "":
+								user_dict['color'] = urllib.parse.unquote_plus(color)
+						elif field.find("phone") > -1:
+							phone = field.split('=')[1]
+							if phone != "":
+								user_dict['phone'] = urllib.parse.unquote_plus(phone)
+						elif field.find("data_nastere") > -1:
+							data_nastere = field.split('=')[1]
+							if data_nastere != "":
+								user_dict['data_nastere'] = urllib.parse.unquote_plus(data_nastere)
+						elif field.find("ora_nastere") > -1:
+							ora_nastere = field.split('=')[1]
+							if ora_nastere != "":
+								user_dict['ora_nastere'] = urllib.parse.unquote_plus(ora_nastere)
+						elif field.find("varsta") > -1:
+							varsta = field.split('=')[1]
+							if varsta != "":
+								user_dict['varsta'] = urllib.parse.unquote_plus(varsta)
+						elif field.find("url") > -1:
+							url = field.split('=')[1]
+							if url != "":
+								user_dict['url'] = urllib.parse.unquote_plus(url)
+						elif field.find("descriere_form") > -1:
+							descriere_form = field.split('=')[1]
+							if descriere_form != "":
+								user_dict['descriere_form'] = descriere_form
 					print("USERNAME {}\nPAROLA {}\n".format(username, password))
 					if (username != '' and password != ''):
 						with open('../continut/resurse/utilizatori.json') as json_file:
@@ -113,7 +159,8 @@ def treat_client(clientsocket, address):
 									break
 							if not exists:
 								data="Operatiune cu succes. Utilizatorul a fost adaugat"
-								users.append({'utilizator': username, 'parola': password})
+								
+								users.append(user_dict)
 								print(users)
 								with open('../continut/resurse/utilizatori.json', 'w') as json_file:
 									json_file.write(json.dumps(users))
