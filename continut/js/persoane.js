@@ -57,7 +57,7 @@ function Verifica_User(){
             console.log(json_users[i]["parola"]);    
         }
         document.getElementById("verifica_account").innerHTML = "Username-ul și parola sunt incorecte"
-        document.getElementById("verifica_account").style="color: red";
+        document.getElementById("verifica_account").style="color: cyan";
        
     });
 }
